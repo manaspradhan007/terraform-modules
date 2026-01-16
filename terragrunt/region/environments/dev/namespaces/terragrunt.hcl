@@ -9,7 +9,7 @@ locals {
 }
 
 terraform {
-  source = "${get_repo_root()}//modules/namespace-modules"
+  source = "${get_repo_root()}//modules/namespace-module"
 }
 
 inputs = {

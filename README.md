@@ -8,3 +8,12 @@ Steps to Start:
 
 2. Install terragrunt
 
+3. Navigate to the directory : terraform-modules/terragrunt/region/environments/dev/
+
+4. Select a module which you want to deploy for e.g namespaces, cd namespaces
+
+5. terragrunt init
+
+6. terragrunt plan
+
+7. terragrunt apply

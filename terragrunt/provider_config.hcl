@@ -1,8 +1,8 @@
 locals {
   env_vars                  = read_terragrunt_config(find_in_parent_folders("env.hcl"))
   region_vars               = read_terragrunt_config(find_in_parent_folders("region.hcl"))
-  config_vars               = read_terragrunt_config(find_in_parent_folders("config.hcl"))
-  kubernetes_config_context = "task-cluster"
+  #config_vars               = read_terragrunt_config(find_in_parent_folders("config.hcl"))
+  kubernetes_config_context = "docker-desktop"
 }
 
 
@@ -11,15 +11,11 @@ generate "provider" {
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 terraform {
-  required_version = "~> 1.11.1"
+  required_version = "~> 1.14.3"
   required_providers {
-    ionoscloud = {
-      source = "ionos-cloud/ionoscloud"
-      version = "6.7.7"
-    }
     kubernetes = {
        source  = "hashicorp/kubernetes"
-       version = "~> 2"
+       version = "~> 3.0.1"
     }
     kubectl = {
       source  = "gavinbunney/kubectl"
@@ -43,6 +39,5 @@ provider "helm" {
 EOF
 }
 inputs = merge(
-  local.env_vars.locals,
-  local.config_vars.locals
+  local.env_vars.locals
 )

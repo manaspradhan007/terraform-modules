@@ -14,3 +14,4 @@
 
 **/.terraform/*
 **/**/.terraform/*
+terragrunt/region/environments/dev/namespaces/.terraform.lock.hcl
