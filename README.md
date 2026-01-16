@@ -9,7 +9,7 @@ In this example we are setting up our local environment and also executing a sam
 
 2. Install terragrunt
 
-3. Update the line 5 in provider_config.hcl, i.e. the kubernetes context : 
+3. Update the line 5 in terragrunt/provider_config.hcl, i.e. the kubernetes context : 
 "kubernetes_config_context = "docker-desktop" --> the name of your current cluster.
 
 Note: We assume, there is laready a context configured in your local machine, if not please abort. Configure your context and then start from here.
